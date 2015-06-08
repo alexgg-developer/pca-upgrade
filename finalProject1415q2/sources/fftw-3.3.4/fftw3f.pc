@@ -1,0 +1,11 @@
+prefix=/home2/users/alumnes/1116918/dades/linux/PCA/practica_final_original_upgrade/finalProject1415q2/sources/fftw-3.3.4/installation
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FFTW
+Description: fast Fourier transform library
+Version: 3.3.4
+Libs: -L${libdir} -lfftw3f 
+Libs.private: -lm
+Cflags: -I${includedir}

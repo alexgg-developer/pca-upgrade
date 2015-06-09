@@ -34,7 +34,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 //#include "rfftw.h"
 #include "fftw3.h"
 
-typedef double fftw_real;
+typedef float fftw_real;
 
 /************/
 /* These values directly below may be altered, and the programs rebuilt */

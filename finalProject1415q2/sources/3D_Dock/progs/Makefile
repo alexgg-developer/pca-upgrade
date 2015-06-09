@@ -39,7 +39,8 @@ SECURITY	= chmod 555
 
 CC_FLAGS_FULL	= -I$(FFTW_DIR)/include $(CC_FLAGS)
 #FFTW_LINKERS    = -L$(FFTW_DIR)/lib -lrfftw -lfftw
-FFTW_LINKERS    = -L$(FFTW_DIR)/lib -lm -lfftw3
+#FFTW_LINKERS    = -L$(FFTW_DIR)/lib -lm -lfftw3
+FFTW_LINKERS    = -L$(FFTW_DIR)/lib -lm -lfftw3f
 
 #############
 

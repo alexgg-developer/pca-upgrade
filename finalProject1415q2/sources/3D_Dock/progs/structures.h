@@ -56,6 +56,8 @@ typedef float fftw_real;
 
 #define min(a,b) (((a)<(b))?(a):(b))
 #define max(a,b) (((a)>(b))?(a):(b))
+#define max_int(a,b) (a) - (((a) - (b)) & -((a) < (b)))
+#define min_int(a,b) (b) - (((b) - (a)) & -((a) < (b)))
 
 #define GENERAL_MEMORY_PROBLEM printf( "You do not have enough memory ([m|re]alloc failure)\nDying\n\n" ) ; exit( EXIT_FAILURE ) ;
 
@@ -144,10 +146,10 @@ extern float total_span_of_structures( struct Structure Structure_1 , struct Str
 extern struct Angle generate_global_angles( int angle_step ) ;
 extern struct Angle generate_range_of_angles( int angle_step , int angle_range , int z_twist , int theta , int phi ) ;
 
-extern int gord( float position , float grid_span , int grid_size ) ;
+extern int gord( float position , float grid_span , unsigned int grid_size ) ;
 extern float pythagoras( float x1 , float y1 , float z1 , float x2 , float y2 , float z2 ) ;
 
-extern void discretise_structure( struct Structure This_Structure , float grid_span , int grid_size , fftw_real *grid ) ;
+extern void discretise_structure( struct Structure This_Structure , float grid_span , unsigned int grid_size , fftw_real *grid ) ;
 extern void surface_grid( float grid_span , int grid_size , fftw_real *grid , float surface , float internal_value ) ;
 
 extern void assign_charges( struct Structure This_Structure ) ;
@@ -159,7 +161,6 @@ extern void qsort_scores( struct Score *Scores , int left , int right ) ;
 extern void qsort_rpscores( struct Score *Scores , int left , int right ) ;
 
 extern int numerical_sort( const void *a , const void *b ) ;
-
 
 
 
